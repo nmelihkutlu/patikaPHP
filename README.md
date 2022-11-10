@@ -73,7 +73,109 @@ O O O O O O O O O O O O O O O O
 
 ### Soru
 
+Verilen dizideki boş elemanları temizleyerek belirtilen adette rastgele değerlerden dizi oluşturan bir fonksiyon yazın. (array_map(), array_filter() ve array_rand() fonksiyonlarını kullanarak.)
+
+Örnek:
+```html
+$planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "", "", NULL];
+
+print_r(sizinFonksiyonunuz($planets, 2));
+print_r(sizinFonksiyonunuz($planets, 3));
+print_r(sizinFonksiyonunuz($planets, 2));
+print_r(sizinFonksiyonunuz($planets, 4));
+print_r(sizinFonksiyonunuz($planets, 5));
+```
+
+Ekran Çıktısı;
+```html
+Array
+(
+    [0] => Venus
+    [1] => Mars
+)
+Array
+(
+    [0] => Earth
+    [1] => Jupiter
+    [2] => Uranus
+)
+Array
+(
+    [0] => Mars
+    [1] => Uranus
+)
+Array
+(
+    [0] => Venus
+    [1] => Earth
+    [2] => Jupiter
+    [3] => Neptune
+)
+Array
+(
+    [0] => Mercury
+    [1] => Earth
+    [2] => Saturn
+    [3] => Uranus
+    [4] => Neptune
+)
+```
+
 ### Cevap
+
+Yazdığım kod:
+```html
+<?php
+echo "<pre>";
+
+$planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "", "", NULL];
+print_r(planetSelector($planets,2));
+print_r(planetSelector($planets,3));
+print_r(planetSelector($planets,2));
+print_r(planetSelector($planets,4));
+print_r(planetSelector($planets,5));
+
+function planetSelector($arr,$x=2){
+    asort($arr);
+    return array_slice(array_filter($arr),0,$x);
+}
+?>
+```
+
+Ekran çıktısı:
+```html
+Array
+(
+    [0] => Earth
+    [1] => Jupiter
+)
+Array
+(
+    [0] => Earth
+    [1] => Jupiter
+    [2] => Mars
+)
+Array
+(
+    [0] => Earth
+    [1] => Jupiter
+)
+Array
+(
+    [0] => Earth
+    [1] => Jupiter
+    [2] => Mars
+    [3] => Mercury
+)
+Array
+(
+    [0] => Earth
+    [1] => Jupiter
+    [2] => Mars
+    [3] => Mercury
+    [4] => Neptune
+)
+```
 
 ## Ödev 3
 
