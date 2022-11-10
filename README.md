@@ -17,7 +17,7 @@ Parametre olarak aldığı değer kadar satırı olan bir üçgen çizen bir fon
 ucgen(15);
 15 sayısı için örnek ekran çıktısı;
 
-O
+O/n
 O O
 O O O
 O O O O
