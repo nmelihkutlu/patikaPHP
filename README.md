@@ -1,4 +1,4 @@
-# SQL - patika.dev - Soru ve Cevapları
+# PHP - patika.dev - Soru ve Cevapları
 >**[patika.dev](https://app.patika.dev/courses/php-temel) platformu PHP öğrenme amaçlı soruların cevaplanması projesidir.** \
 > **Profil için tıklayınız: [app.patika.dev/nmelihkutlu](https://app.patika.dev/nmelihkutlu)**
 
