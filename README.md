@@ -7,15 +7,16 @@
 
 
 
-[Ödev1](#ödev-1) - [Ödev2](#ödev-2) - [Ödev3](#ödev-3)
+[Ödev1 Fonksiyonlar](#ödev-1) - [Ödev2 Dizi Fonksiyonları](#ödev-2) - [Ödev3 Form İşlemleri](#ödev-3)
 
 ## Ödev 1
+Fonksiyonlar
 
 ### Soru
 Parametre olarak aldığı değer kadar satırı olan bir üçgen çizen bir fonksiyon yazın. Fonksiyon içerisinde while ve for döngülerinin her ikisini de kullanın.
 
 ucgen(15);
-15 sayısı için örnek ekran çıktısı;
+15 sayısı için örnek ekren çıktısı;
 
 O
 
@@ -49,7 +50,6 @@ O O O O O O O O O O O O O O O
 
 O O O O O O O O O O O O O O O O
 
-
 ### Cevap
 
 ```html
@@ -71,6 +71,7 @@ O O O O O O O O O O O O O O O O
 
 
 ## Ödev 2
+Dizi Fonksiyonları
 
 ### Soru
 
@@ -179,7 +180,43 @@ Array
 ```
 
 ## Ödev 3
+Form İşlemleri
 
 ### Soru
+1. Kullanıcıdan sayı değeri alabileceğiniz bir form hazırlayın.
+2. Gelen sayı değerlerinin 3 ile bölümünden kalanın 0 olup olmadığını kontrol eden bir fonksiyon yazın.
+3. Kullanıcıya girilen değerin 3 bölünebilirliğini, bölünemiyorsa bölünebilen ilk değeri kullanıcıya bildirin.
+4. Boş değer gönderilirse değerin boş olmayacağını bildirin.
+
+Örnek:
+- Girilen Sayı : 4
+- Girdiğiniz sayı 3'e bölünemez. Bölünebilecek ilk sayı 6'dır.
+
 
 ### Cevap
+
+Yazılan kod aşağıdaki gibidir:
+
+```html
+<form action="<?= $_SERVER["PHP_SELF"]; ?>" method="get">
+    <label for="number">Sayı Giriniz:</label>
+    <input type="number" name="number">
+    <input type="submit" value="Gönder">
+</form>
+
+<?php
+if (!empty($_GET["number"])) {
+    echo ucunkati($_GET["number"]);
+} else echo "Boş değer girdiniz.";
+
+function ucunkati($number)
+{
+    $r = $number % 3;
+    if ($r == 0) {
+        return "Girilen sayı: " . $number;
+    } else {
+        return "Girdiğiniz sayı 3'e bölünemez. Bölünebilecek ilk sayı " . $number + (3 - $r) . "'dir.";
+    }
+}
+?>
+```
